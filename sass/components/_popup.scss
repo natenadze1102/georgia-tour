@@ -1,0 +1,128 @@
+.popup {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top:0;
+    left:0;
+    background-color: rgba($color-black, .8);
+    z-index: 9999;
+    /* display: none; */ // Bad decision cause we can't animate it
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s;
+    backdrop-filter: blur(10px); // Размывает задний фон ))
+
+    
+
+    &__content {
+        @include absCenter;
+
+        width: 75%;
+        background-color: $color-white;
+        box-shadow: 0 2rem 4rem rgba($color-black, .2);
+        border-radius: 3px;
+        /* display: table; */ // AUTOR DECISION
+        display: flex;
+        overflow: hidden; // corners are hidden (border-radius)
+        opacity: 0;
+       /*  transform: scale(.05);  */  // We already have transform property in mixins so to make it work we must repeat it
+       transform: translate(-50%, -50%) scale(.25);
+       transition: all .4s .2s;// TO animate it itself;
+
+       @include respond(tab-port) {
+         width: 90%;
+       }
+
+       @include respond(phone) {
+        width: 100%;
+      }
+    }
+
+    &__left {
+        width: 33.333333%;
+       /*  display: table-cell; */ // AUTOR DECISION
+       display: flex;
+       flex-direction: column;
+
+       @include respond(tab-port) {
+        width: 50%;
+      }
+    }
+
+    &__right {
+        width: 66.6666667%;
+        /* display: table-cell; */                      // AUTOR DECISION
+       /*  vertical-align: middle;  */                  // AUTOR DECISION
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        padding: 3rem 5rem;
+
+       a {
+           align-self: flex-start; // Decreases button width . // ОЧЕНЬ ВАЖНАЯ ШТУКА .
+       }
+
+       @include respond(tab-port) {
+            width: 50%;
+            font-size: 2rem;
+        }
+
+        @include respond(phone) {
+            padding: 2rem 3rem;
+        }
+    }
+
+    &__text {
+        font-size: 1.4rem;
+        margin-bottom: 4rem;
+        column-count: 2;  // ДЕЛИТ ТЕКСТ НА 2 КОЛОНКИ
+        column-gap: 4rem; // РАССТОЯНИЕ МЕЖДУ КОЛОНКАМИ
+        column-rule: 1px solid $color-grey-light-2;
+        hyphens: auto; // перенос
+
+        @include respond(tab-port) {
+            font-size: 2rem;
+            column-count: 1;
+        }
+
+        @include respond(phone) {
+            font-size: 1.5rem;
+        }
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+    }
+//OPEN STATE
+    &:target {
+        opacity:1 ;
+        visibility: visible;
+    }
+
+    &:target &__content {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    &__close {
+
+        &:link,
+        &:visited {
+            color:$color-grey-dark;
+            position: absolute;
+            top:2.5rem;
+            right:2.5rem;
+            font-size:3rem;
+            text-decoration: none;
+            /* display: inline-block; */
+            transition: all .2s;
+
+        }
+
+        &:hover {
+            color:$color-primary;
+        }
+    }
+    
+}

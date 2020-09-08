@@ -1,0 +1,48 @@
+.header {
+    height: 95vh;
+    background-image:linear-gradient(
+     to right bottom,
+      rgba($color-primary-light, 0.8), 
+      rgba($color-primary-dark, 0.8)),
+    url(/img/hero-small.jpg); // we use -/-   - to go back of directory
+    background-size: cover; //makes responsive  ( height + this)
+    background-position: top; //always try to fit element of the box while resizing it
+    /* -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); */  // Nowdays it is responsive in Google Chrome.
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    position: relative;
+
+    @media only screen and (min-resolution:192dpi) and (min-width:37.5em),
+           only screen and (min-width:125em) {  // comma here means "or". // 2000px / 16 = 125em ; 600px/16 =37.5em
+        background-image:linear-gradient(
+      to right bottom,
+      rgba($color-secondary-light, 0.8), 
+      rgba($color-secondary-dark, 0.8)),
+      url(/img/hero.jpg);
+    }
+
+    
+
+    @include respond(phone) {
+      clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    }
+
+    &__logo-box {
+      position: absolute;
+      top:4rem;
+      left:4rem;
+  }
+
+    &__logo {
+      height: 3.5rem;   //width is automatically adjusted by browser. We can also set width instead of height
+  }
+
+    &__text-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      transform: translate(0, -5%);
+  }
+
+ }

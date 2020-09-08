@@ -1,0 +1,102 @@
+.section-about {
+    background-color:$color-primary-light-1;
+    padding: 25rem 0;
+    margin-top:-25vh; // Важное событие , которое перекрыло картинку
+
+    @include respond(tab-port) {
+        padding:20rem 0;
+    }
+}
+
+.section-features {
+    padding:20rem 0;
+    background-image:linear-gradient(
+     to right bottom,
+      rgba(126, 213, 111, 0.8), 
+      rgba(40, 180, 133, 0.8)),
+    url(/img/nat-4.jpg); // we use -/-   - to go back of directory
+    background-size: cover; //makes responsive  ( height + this)
+    transform: skewY(-7deg);
+    margin-top: -10rem;
+    & > *{
+        transform: skewY(7deg); // here we skew row to return the position
+    }
+
+    @include respond(tab-port) {
+        padding: 10rem 0;
+    }
+}
+
+.section-tours {
+    background-color:$color-primary-light-1;
+     padding:25rem 0 15rem 0;
+    margin-top: -10rem;
+
+    @include respond(tab-port) {
+        padding: 20rem 0 10rem 0;
+    }
+}
+
+.section-stories {
+    padding: 15rem 0;
+    position: relative;
+
+    @include respond(tab-port) {
+        padding: 10rem 0;
+    }
+}
+
+.section-book {
+    padding: 15rem 0;
+    background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+
+    @include respond(tab-port) {
+        padding: 10rem 0;
+    }
+}
+
+.book {
+            background-image:linear-gradient(105deg,  /* Another way to to what we did in the start ( clip-path) . But there we had to use another tool! */
+            rgba($color-white, .9) 0%,
+            rgba($color-white, .9) 50%,
+            transparent 50%),
+        url(/img/nat-10.jpg);
+    background-size: 100%; // or COVER . Not the same . 100% - ensueres taht it covers in X - direction
+    border-radius: 3px; // we can use $- variable cause we used this value many times
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .2);
+    /* background-repeat: no-repeat;  we do not need to use because our image is covered (100%)*/
+    /* height: 50rem;  testing purposes*/
+    width:100%; // I SHOULD DEFINE WITHG CAUSE I USE FLEX - IN ROW !  
+
+    @include respond(tab-land) {
+        background-image:linear-gradient(105deg,  
+            rgba($color-white, .9) 0%,
+            rgba($color-white, .9) 65%,
+            transparent 65%),
+        url(/img/nat-10.jpg);
+        background-size: cover; // better than 100% becasue covers all the section ( we can notsee white transparent color) 
+    }
+
+    @include respond(tab-port) {
+        background-image:linear-gradient(/* 105deg ==*/  to right,
+            rgba($color-white, .9) 0%,
+            rgba($color-white, .9) 100%,
+        ),
+        url(/img/nat-10.jpg);
+        background-size: cover; // better than 100% becasue covers all the section ( we can notsee white transparent color) 
+    }
+
+
+    &__form {
+        width: 50%;
+        padding: 6rem;
+
+        @include respond(tab-land) {
+            width: 65%;
+        }
+
+        @include respond(tab-port) {
+            width: 100%;
+        }
+    }
+}

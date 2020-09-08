@@ -1,0 +1,1 @@
+{"version":3,"file":"grid.css","sources":["layout/grid.scss"],"sourcesContent":[".row {\r\n    max-width:116rem;\r\n    margin:0 auto;\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n\r\n   \r\n  }"],"names":[],"mappings":"AAAA,AAAA,IAAI,CAAC;EACD,SAAS,EAAC,MAAM;EAChB,MAAM,EAAC,MAAM;EACb,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,IAAI,GAGhB"}

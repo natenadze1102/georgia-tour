@@ -1,0 +1,52 @@
+Don't use normalize.css ( browsers became better);
+https://bennettfeely.com/clippy/ - to make polygon
+https://easings.net/ , https://cubic-bezier.com/ - custom animation
+https://sizzy.co/ - See how web-site is looked from many devices
+https://caniuse.com/- new features and asking if i can use it in google chrome
+How to center items using flexbox  should to do like autor..
+
+use TABINDEX !
+https://exercism.io/
+animation-fill-mode :backwards;
+img srcset
+
+
+https://coverr.co/  - Кавер видео-записи!
+
+cumbersome - громоздкий
+bunch - скопление, куча
+maintain - поддержать, содержать
+in terms - с точки зрения
+gutter - ?
+encourage - поощрять
+skew- скос
+to treat - рассматривать
+subtract - вычитать
+asssume - предполагать
+cozy-уютный
+implement-воплощать в жизнь
+imply - подразумевать
+aspect ration- соотношение сторон
+adjacent-соседний
+sibling - родной брат,сестра
+toggle-переключатель
+as intended - как предполагалось
+nevertheless- тем не менее
+opacity- непрозрачность
+hyphen-перенос
+recap-резюмировать
+accomplishment- достижение
+restriction - ограничения
+constraints - ограничения
+to scale up - увеличить масштаб
+grasp material - схватывать
+concatinated- обЪединененный
+deprecated-устаревший
+workflow-рабочий процесс
+zoom-out-уменьшить
+manually- вручную
+retrieve - извлечь
+coercion - принуждение
+grasp - схватывать
+evaluate - оценивать
+expose - раскрывать , разоблачать

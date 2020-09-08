@@ -1,0 +1,49 @@
+ // better technicue is to use font family in body selector instead of in universal selector ( * )
+ *,
+ *::after,
+ *::before{
+   margin: 0;
+   padding: 0;
+   box-sizing: inherit; // BEST PRACTICE IN DEVELOPMENT . in inherits to every element on page and takes inheritance from BODY { ) 
+ }
+
+html {   
+ font-size: 62.5%; // easy to calculate rem!// BEST PRACTICE!  // FROM AUTOR : THIS DEFINES HOW 1rem is.     So  1rem IS 10px : 10px /16px = 62.5%
+
+/*  @include respond(phone) {  Нет необходимости использовать,поскольку в ниже стоящес примере мы также используем 50%
+   font-size: 50%;
+ } */
+
+
+  @include respond(tab-land) { 
+    font-size: 56.25%; //1rem = 9px  9/16 = 50%  // <1200px
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%; //1rem = 8px (в landscape целесообразнее 9px), 8/16 = 50%  // <900px
+  }
+
+  
+
+  @include respond(big-desktop) {
+    font-size: 75%;   //1rem = 12px , 12/16 = 75%
+  }
+ 
+}
+
+
+//!NB - Важна очередность .  При достижении величины <= 900px , будет использоваться "tab-port" , поскольку он прописан после "tab-land" . Иначе в "Конфликте победит "tab-land".
+
+body { // We do not specify with SASS cause we use it only once.!!!
+  box-sizing: border-box; // Delete borders and paddings on total width and hight on all webpage//
+  padding: 3rem;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
+}
+
+::selection {
+  background-color: $color-primary;
+  color:$color-white;
+}
